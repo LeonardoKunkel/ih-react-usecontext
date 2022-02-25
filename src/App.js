@@ -1,24 +1,23 @@
 import logo from './logo.svg';
 import './App.css';
+import Main from './components/Main';
+import Menu from './components/Menu';
+
+import DogsState from './context/dogs/DogsState';
+import HaloState from './context/Halo/HaloState';
+import Food from './components/Food';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <DogsState>
+        <HaloState>
+          <Main />
+          <Menu />
+          <Food />
+        </HaloState>
+      </DogsState>
+    </>
   );
 }
 
